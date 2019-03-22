@@ -73,6 +73,7 @@ public class SlaveXmlRpcEndpointImpl implements SlaveXmlRpcEndpoint {
   @Override
   public List<Object> shutdown(String callerId, String message) {
     log.info("Shutdown requested by " + callerId + " with message \"" + message + "\"");
+    System.exit(0);
     slave.shutdown();
     return Response.newSuccess("Shutdown successful.", null).toList();
   }
